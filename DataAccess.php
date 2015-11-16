@@ -34,7 +34,7 @@ $this->query=mysql_unbuffered_query($sql,$this->db); // Perform query here
 //! 获取一条记录 
 /** 
 * 以数组形式返回查询结果的一行记录，通过循环调用该函数可遍历全部记录 
-* @return mixed 
+* @return mixed 11
 */
 function getRow () { 
 if ( $row=mysql_fetch_array($this->query,MYSQL_ASSOC) ) 
