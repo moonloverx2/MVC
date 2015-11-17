@@ -17,23 +17,23 @@ var $dao; //DataAccess类的一个实例（对象）
 function __construct(&$dao) { 
 $this->dao=$dao; 
 } 
-function listNote() { //获取全部留言 
-$this->dao->fetch("SELECT * FROM note"); 
+function ListComment() { //获取全部评论 
+$this->dao->fetch("SELECT * FROM BlogComment"); 
 } 
-function postNote($name,$content) { //插入一条新留言 
-$sql = "INSERT INTO `test`.`note` 
-(`id`, `name`, `content`, `ndate`, `add`) 
-VALUES (NULL, '$name', '$content', NULL, NULL);"; 
+function InsertComment($name,$email,$content) { //插入一条新评论 
+$sql = "INSERT INTO `mvctest`.`BlogComment` 
+(`Identifier`, `addtime`, `name`, `email`, `Comment`) 
+VALUES (NULL, ".time().", '$name', '$email', '$content');"; 
 //echo $sql; //对于较复杂的合成SQL语句，<br /> 
 //调试时用echo输出一下看看是否正确是一种常用的调试技巧 
 $this->dao->fetch($sql); 
 } 
-function deleteNote($id) { //删除一条留言，$id是该条留言的id 
-$sql = "DELETE FROM `test`.`note` WHERE `id`=$id;"; 
+function DeleteComment($id) { //删除一条评论 ，$id是该条评论 的id 
+$sql = "DELETE FROM `mvctest`.`BlogComment` WHERE `Identifier`=$id;"; 
 //echo $sql; 
 $this->dao->fetch($sql); 
 } 
-function getNote() { //获取以数组形式存储的一条留言 
+function getNote() { //获取以数组形式存储的一条评论  
 //View利用此方法从查询结果中读出数据并显示 
 if ( $note=$this->dao->getRow() ) 
 return $note; 
