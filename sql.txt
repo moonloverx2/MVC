@@ -4,7 +4,10 @@ CHARACTER SET 'utf8'
 COLLATE 'utf8_general_ci';
 
 2、
-CREATE TABLE DictCarVehicleType(
- Identifier INT NOT NULL PRIMARY KEY,
-Type VARCHAR(100) NULL
+CREATE TABLE BlogComment(
+ Identifier INT AUTO_INCREMENT NOT NULL PRIMARY KEY ,
+ addtime datetime NULL,
+ name VARCHAR(200) null,
+ email VARCHAR(200) null,
+ Comment text null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
