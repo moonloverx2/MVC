@@ -1,0 +1,10 @@
+1、
+CREATE DATABASE mvctest
+CHARACTER SET 'utf8'
+COLLATE 'utf8_general_ci';
+
+2、
+CREATE TABLE DictCarVehicleType(
+ Identifier INT NOT NULL PRIMARY KEY,
+Type VARCHAR(100) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
